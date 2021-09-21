@@ -73,8 +73,8 @@ class Header extends StatelessWidget {
             color: Colors.black,
             height: (kIsWeb)?30:10,
             thickness: 5,
-             indent:(kIsWeb)?  (MediaQuery.of(context).size.width / 100) * (34.54/4): 20,
-             endIndent: (kIsWeb)? (MediaQuery.of(context).size.width / 100) * (34.54/4): 20,
+             indent:(kIsWeb)?  (MediaQuery.of(context).size.width / 100) * (34.54/4): 0,
+             endIndent: (kIsWeb)? (MediaQuery.of(context).size.width / 100) * (34.54/4): 0,
           )
 
 

@@ -1,23 +1,25 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/layouts/project.dart';
+import 'package:my_portfolio/modules/project.dart';
 import 'package:my_portfolio/my_portfolio.dart';
 
 class MyProjects extends StatefulWidget {
 
   late MyPortfolio myPortfolio;
-   MyProjects({Key? key,required this.myPortfolio}) : super(key: key);
+  late Function? webFunction;
+   MyProjects({Key? key,required this.myPortfolio,required this.webFunction}) : super(key: key);
 
   @override
-  _MyProjectsState createState() => _MyProjectsState(this.myPortfolio);
+  _MyProjectsState createState() => _MyProjectsState(this.myPortfolio,this.webFunction);
 }
 
 class _MyProjectsState extends State<MyProjects> {
-
+  late Function? webFunction;
   late MyPortfolio myPortfolio;
 
-  _MyProjectsState(this.myPortfolio);
+  _MyProjectsState(this.myPortfolio,this.webFunction);
 
-  void gotToSelectProject(Project selectedPrj){
+  void gotToSelectProjectM(Project selectedPrj){
     setState(() {
       Navigator.push(context, MaterialPageRoute(
           builder: (builderContext) => MyProjectView(selectedProject: selectedPrj )
@@ -29,16 +31,17 @@ class _MyProjectsState extends State<MyProjects> {
   @override
   Widget build(BuildContext context) {
 
-    //double width = MediaQuery.of(context).size.width; //
+    double width = MediaQuery.of(context).size.width;
    // double height = MediaQuery.of(context).size.height;
     return Container(
+      width: width,
 
 
       child: Column(
         crossAxisAlignment : CrossAxisAlignment.start,
 
         children: [
-          Container(width: double.infinity,
+          Container(width: width, // dont use double.infinity breaks the system
             margin: EdgeInsets.only(bottom: 10), // margin for top between My Project
             alignment: Alignment.topLeft, // Makes my Project go left
             child: FittedBox( fit: BoxFit.scaleDown,
@@ -63,7 +66,11 @@ class _MyProjectsState extends State<MyProjects> {
                                 title: Text(myPortfolio.getProjects[index].projectName.toString()),
                                 subtitle: Text(myPortfolio.getProjects[index].projectSubHeader.toString()),
                                 leading: Image.asset(myPortfolio.getImageLocation),
-                               onTap: (){(gotToSelectProject(myPortfolio.getProjects[index]));}
+                               onTap:
+                                    (){
+                                      (kIsWeb)?webFunction!(myPortfolio.getProjects[index]):
+                                  (gotToSelectProjectM(myPortfolio.getProjects[index]));
+                                }
                               ),
                             ),
                               if (index!= (myPortfolio.getProjects.length-1))

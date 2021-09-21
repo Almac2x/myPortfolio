@@ -37,7 +37,7 @@ class _MobilePState extends State<MobileP> {
       child: Column(
         children: [
           Header(myPortfolio: myPortfolio,),     // Header Module for Your Name
-          MyProjects(myPortfolio: myPortfolio,)  //add here My Projects Module
+          MyProjects(myPortfolio: myPortfolio,webFunction: null,)  //add here My Projects Module
           //add here Name module
         ],
 
