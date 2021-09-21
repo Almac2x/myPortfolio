@@ -7,8 +7,6 @@ import 'package:my_portfolio/layouts/web_layout.dart';
 import 'package:my_portfolio/modules/header_module.dart';
 import 'my_portfolio.dart';
 
-
-
 void main() {
   runApp(MyApp());
 }
@@ -26,6 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'My Portfolio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Raleway',
         textTheme: const TextTheme(
 
         ),
