@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/layouts/mobile_landscape.dart';
 import 'package:my_portfolio/layouts/mobile_portrait.dart';
+import 'package:my_portfolio/layouts/web_layout.dart';
 import 'package:my_portfolio/modules/header_module.dart';
 import 'my_portfolio.dart';
 
@@ -63,10 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
     bool isLandScaped = MediaQuery.of(context).orientation == Orientation.landscape;
 
     return Scaffold(
-      appBar: (!kIsWeb)?null:(isLandScaped)?null:AppBar( // edit this for
+      appBar: (kIsWeb)?null:(isLandScaped)?null:AppBar( // edit this for
         title: Text(title),
       ),
-      body: (true)?MobileP(myPortfolio: myPortfolio,): Container(color: Colors.red,)  // here add the layouts for the program // as of now mobile portrait muna
+      body: (kIsWeb)?WebLayout(myPortfolio: myPortfolio,):MobileP(myPortfolio: myPortfolio,)   // here add the layouts for the program // as of now mobile portrait muna
 
 
     );

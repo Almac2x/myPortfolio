@@ -39,7 +39,7 @@ class _MyProjectsState extends State<MyProjects> {
 
         children: [
           Container(width: double.infinity,
-            margin: EdgeInsets.only(bottom: 10),
+            margin: EdgeInsets.only(bottom: 10), // margin for top between My Project
             alignment: Alignment.topLeft, // Makes my Project go left
             child: FittedBox( fit: BoxFit.scaleDown,
               child: Text('My Projects', style: TextStyle(fontSize: 36),)
@@ -59,6 +59,7 @@ class _MyProjectsState extends State<MyProjects> {
                           return  Column(
                             children:[ Card(
                               child: ListTile(
+                                tileColor: Colors.black26,
                                 title: Text(myPortfolio.getProjects[index].projectName.toString()),
                                 subtitle: Text(myPortfolio.getProjects[index].projectSubHeader.toString()),
                                 leading: Image.asset(myPortfolio.getImageLocation),
