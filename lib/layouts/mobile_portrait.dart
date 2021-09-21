@@ -20,7 +20,13 @@ class _MobilePState extends State<MobileP> {
 
   @override
   Widget build(BuildContext context) {
+
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Container(
+      height: height,
+        width: width,
 
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black),

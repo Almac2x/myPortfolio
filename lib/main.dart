@@ -1,6 +1,4 @@
 
-import 'dart:html';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/layouts/mobile_landscape.dart';

@@ -15,15 +15,18 @@ class MyProjectView extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       padding: EdgeInsets.only(left: 20,right: 20,top: 20),
 
-      child: Column(
+      child: Column(mainAxisSize: MainAxisSize.max,
         children: [
           ConstrainedBox(child: Image.asset(selectedProject.imageLocation),
               constraints:  BoxConstraints(
             minHeight: 300,)
-             
+
           ),
 
-          Text('${selectedProject.projectDescription}',style: TextStyle(fontSize:  18),),
+          Expanded( flex: 1,
+            child: SingleChildScrollView(
+                child:  Text('${selectedProject.projectDescription}',style: TextStyle(fontSize:  18),)),
+          ),
         ],
 
       ),

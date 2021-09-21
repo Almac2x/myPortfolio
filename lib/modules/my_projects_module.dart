@@ -11,7 +11,6 @@ class MyProjects extends StatefulWidget {
   _MyProjectsState createState() => _MyProjectsState(this.myPortfolio);
 }
 
-
 class _MyProjectsState extends State<MyProjects> {
 
   late MyPortfolio myPortfolio;
@@ -29,7 +28,12 @@ class _MyProjectsState extends State<MyProjects> {
 
   @override
   Widget build(BuildContext context) {
+
+    //double width = MediaQuery.of(context).size.width; //
+   // double height = MediaQuery.of(context).size.height;
     return Container(
+
+
       child: Column(
         crossAxisAlignment : CrossAxisAlignment.start,
 
@@ -42,37 +46,38 @@ class _MyProjectsState extends State<MyProjects> {
             ),
           ),
 
-           SingleChildScrollView(
-              physics: ScrollPhysics(),
-              child: Column(
-                children: <Widget>[
-                  ListView.builder(
-                      physics: PageScrollPhysics(),
-                      shrinkWrap: true,
-                      addAutomaticKeepAlives: false,
-                      itemCount: myPortfolio.getProjects.length,
-                      itemBuilder: (context,index){
-                        return  Column(
-                          children:[ Card(
-                            child: ListTile(
-                              title: Text(myPortfolio.getProjects[index].projectName.toString()),
-                              subtitle: Text(myPortfolio.getProjects[index].projectSubHeader.toString()),
-                              leading: Image.asset(myPortfolio.getImageLocation),
-                             onTap: (){(gotToSelectProject(myPortfolio.getProjects[index]));}
-                            ),
-                          ),
-                            if (index!= (myPortfolio.getProjects.length-1))
-                              Divider(
-                                color: Colors.black,
-                                height: 10,
-                                thickness: 5,
-                                indent: 20,endIndent: 20,
+       SingleChildScrollView(
+                physics: ScrollPhysics(),
+                child: Column(
+                  children: <Widget>[
+                    ListView.builder(
+                        physics: PageScrollPhysics(),
+                        shrinkWrap: true,
+                        addAutomaticKeepAlives: false,
+                        itemCount: myPortfolio.getProjects.length,
+                        itemBuilder: (context,index){
+                          return  Column(
+                            children:[ Card(
+                              child: ListTile(
+                                title: Text(myPortfolio.getProjects[index].projectName.toString()),
+                                subtitle: Text(myPortfolio.getProjects[index].projectSubHeader.toString()),
+                                leading: Image.asset(myPortfolio.getImageLocation),
+                               onTap: (){(gotToSelectProject(myPortfolio.getProjects[index]));}
                               ),
-                        ]);
-                      })
-                ],
+                            ),
+                              if (index!= (myPortfolio.getProjects.length-1))
+                                Divider(
+                                  color: Colors.black,
+                                  height: 10,
+                                  thickness: 5,
+                                  indent: 20,endIndent: 20,
+                                ),
+                          ]);
+                        })
+                  ],
+                ),
               ),
-            ),
+
         ],
       ),
 
