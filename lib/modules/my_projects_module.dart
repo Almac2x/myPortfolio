@@ -19,23 +19,22 @@ class _MyProjectsState extends State<MyProjects> {
 
   _MyProjectsState(this.myPortfolio,this.webFunction);
 
-  void gotToSelectProjectM(Project selectedPrj){
-    setState(() {
-      Navigator.push(context, MaterialPageRoute(
-          builder: (builderContext) => MyProjectView(selectedProject: selectedPrj )
-      ));
-    });
-
-  }
-
   @override
   Widget build(BuildContext context) {
 
+    void gotToSelectProjectM(Project selectedPrj){
+      setState(() {
+        Navigator.push(context, MaterialPageRoute(
+            builder: (builderContext) => MyProjectView(selectedProject: selectedPrj )
+        ));
+      });
+
+    }
+
     double width = MediaQuery.of(context).size.width;
-   // double height = MediaQuery.of(context).size.height;
+    //double height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-
 
       child: Column(
         crossAxisAlignment : CrossAxisAlignment.start,

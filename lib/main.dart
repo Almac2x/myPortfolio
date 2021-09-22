@@ -25,12 +25,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Raleway',
-        textTheme: const TextTheme(
 
-        ),
-
-        primarySwatch: Colors.blue,
       ),
+
       home: MyHomePage(title: 'My Portfolio',myPortfolio: myPortfolio,),
     );
   }

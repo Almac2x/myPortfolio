@@ -71,7 +71,7 @@ class Header extends StatelessWidget {
            Divider(
 
             color: Colors.black,
-            height: (kIsWeb)?30:10,
+            height: (kIsWeb)?30:10, // for mobile 20 px is the most related to figma
             thickness: 5,
              indent:(kIsWeb)?  (MediaQuery.of(context).size.width / 100) * (34.54/4): 0,
              endIndent: (kIsWeb)? (MediaQuery.of(context).size.width / 100) * (34.54/4): 0,

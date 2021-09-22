@@ -28,14 +28,13 @@ class _WebLayoutState extends State<WebLayout> {
 
   }
 
-  void selectProjectW(Project projectSelected){
+  void selectProjectW(Project projectSelected){ // function for web
 
     setState(() {
       selectedProject = projectSelected;
     });
 
   }
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -43,10 +42,9 @@ class _WebLayoutState extends State<WebLayout> {
 
     bool isSizeFit(){
 
-      if(height < 1000 && width < 1000 || width < 650 )
+      if(height < 1000 && width < 1000 || width < 650 || height < 750 )
         return true;
 
-      else
         return false;
 
     }
@@ -63,11 +61,10 @@ class _WebLayoutState extends State<WebLayout> {
               alignment: Alignment.topLeft,
               child: Row(
                 children: [
-                  Expanded(flex: 1,child: MyProjects(myPortfolio: myPortfolio,webFunction: selectProjectW,)),
+                  Expanded(flex: 1,child: Column(children:[ Expanded(flex: 1,child: SingleChildScrollView(child: MyProjects(myPortfolio: myPortfolio,webFunction: selectProjectW)))])),
                   VerticalDivider(
                     color: Colors.black,
                     width: 20,
-
                     thickness: 5,
                     indent: 20,endIndent: 20,
                   ),
