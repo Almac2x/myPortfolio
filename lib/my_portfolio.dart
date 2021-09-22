@@ -27,7 +27,7 @@ class MyPortfolio{
   //Getters
   String get getFirstName => this._firstName;
   String get getLastName => this._lastName;
-  String get getFullName => '${this._firstName}  ${this._lastName}';
+  String get getFullName => '${this._firstName} ${this._lastName}';
   String get getMyPosition => this._myPosition;
   String get getImageLocation => this._imageLocation;
   List<Project> get getProjects => this._projects;

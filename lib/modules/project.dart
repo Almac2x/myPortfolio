@@ -19,8 +19,8 @@ class _MyProjectViewState extends State<MyProjectView> {
   Widget build(BuildContext context) {
 
     return (widget.selectedProject ==null)?FittedBox(fit: BoxFit.cover,child: Text('Please Select A Project First'),): Scaffold(
-      appBar: AppBar(
-        title: Text(widget.selectedProject!.projectName),
+      appBar: (kIsWeb)?null:AppBar(
+        title: (kIsWeb)?null: Text(widget.selectedProject!.projectName),
 
       ),
       body: SingleChildScrollView(
