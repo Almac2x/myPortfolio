@@ -23,7 +23,6 @@ class _WebLayoutState extends State<WebLayout> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
    selectedProject = null;
 
   }
@@ -68,7 +67,7 @@ class _WebLayoutState extends State<WebLayout> {
                     thickness: 5,
                     indent: 20,endIndent: 20,
                   ),
-                  Expanded(flex: 3,child: MyProjectView(selectedProject: selectedProject,),)
+                  Expanded(flex: 3,child: MyProjectView(selectedProject: selectedProject,),) // web view is not scrollable mobile is
                 ],
               ),
               

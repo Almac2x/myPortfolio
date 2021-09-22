@@ -48,9 +48,7 @@ class _MyProjectsState extends State<MyProjects> {
             ),
           ),
 
-       SingleChildScrollView(
-                physics: ScrollPhysics(),
-                child: Column(
+            Column(
                   children: <Widget>[
                     ListView.builder(
                         physics: PageScrollPhysics(),
@@ -65,7 +63,7 @@ class _MyProjectsState extends State<MyProjects> {
                                 title: Text(myPortfolio.getProjects[index].projectName.toString()),
                                 subtitle: Text(myPortfolio.getProjects[index].projectSubHeader.toString()),
                                 leading: Image.asset(myPortfolio.getImageLocation),
-                               onTap:
+                               onLongPress:
                                     (){
                                       (kIsWeb)?webFunction!(myPortfolio.getProjects[index]):
                                   (gotToSelectProjectM(myPortfolio.getProjects[index]));
@@ -83,7 +81,7 @@ class _MyProjectsState extends State<MyProjects> {
                         })
                   ],
                 ),
-              ),
+
 
         ],
       ),
