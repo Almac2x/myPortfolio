@@ -19,8 +19,6 @@ class Header extends StatelessWidget {
     late double fontSizePositon = (!kIsWeb)? 20 : 38;
     //make text font a variable for name and position
 
-
-
     return Container(
 
       child: Column( // Header + Divider
@@ -57,7 +55,6 @@ class Header extends StatelessWidget {
                        ),
 
                           FittedBox(fit: BoxFit.contain, child: Text(myPortfolio.getMyPosition,style: TextStyle(fontSize:fontSizePositon) )),// text font will depend for web
-
                         ],
               ),
                  ),
@@ -65,7 +62,6 @@ class Header extends StatelessWidget {
 
               if(kIsWeb) // My Portfolio for web only
                      Expanded( child: IntrinsicHeight(child: Container(height: 220,alignment:Alignment.topLeft,child: FittedBox(fit: BoxFit.fitHeight,child: Text('My Portfolio',style: TextStyle(fontSize: 60),))))),
-
 
             ],),
            Divider(
@@ -76,9 +72,6 @@ class Header extends StatelessWidget {
              indent:(kIsWeb)?  (MediaQuery.of(context).size.width / 100) * (34.54/4): 0,
              endIndent: (kIsWeb)? (MediaQuery.of(context).size.width / 100) * (34.54/4): 0,
           )
-
-
-
         ],
       ), //End Row
 
