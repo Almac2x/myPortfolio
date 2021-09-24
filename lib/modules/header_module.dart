@@ -16,7 +16,7 @@ class Header extends StatelessWidget {
     late double imageHeight = (!kIsWeb)? 80 : 220;
 
     late double fontSizeYourName = (!kIsWeb)? 30 : 48;
-    late double fontSizePositon = (!kIsWeb)? 15 : 38;
+    late double fontSizePositon = (!kIsWeb)? 20 : 38;
     //make text font a variable for name and position
 
     return Container(
@@ -54,7 +54,7 @@ class Header extends StatelessWidget {
 
                        ),
 
-                          FittedBox(fit: BoxFit.cover, child: Text(myPortfolio.getMyPosition,style: TextStyle(fontSize:fontSizePositon) )),// text font will depend for web
+                          FittedBox(fit: BoxFit.scaleDown, child: Text(myPortfolio.getMyPosition,style: TextStyle(fontSize:fontSizePositon) )),// text font will depend for web
                         ],
               ),
                  ),

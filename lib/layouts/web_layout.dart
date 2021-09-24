@@ -29,6 +29,8 @@ class _WebLayoutState extends State<WebLayout> {
 
   void selectProjectW(Project projectSelected){ // function for web
 
+
+
     setState(() {
       selectedProject = projectSelected;
     });
@@ -45,9 +47,8 @@ class _WebLayoutState extends State<WebLayout> {
         return true;
 
         return false;
-
     }
-    return (isSizeFit()) ? Container(width: width,child: FittedBox(fit: BoxFit.contain,child: Text('Expand to View'))):Container( // outer container
+    return (isSizeFit()) ? Container(color: Colors.black,width: width,height: height,child: FittedBox(fit: BoxFit.contain,child: Text('Expand to View',style: TextStyle(color: Colors.white),))):Container( // outer container
       height: height,
       width: width,
       margin: EdgeInsets.symmetric(vertical: 30,horizontal: 30),

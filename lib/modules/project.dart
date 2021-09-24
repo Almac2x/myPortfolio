@@ -18,7 +18,20 @@ class _MyProjectViewState extends State<MyProjectView> {
   @override
   Widget build(BuildContext context) {
 
-    return (widget.selectedProject ==null)?FittedBox(fit: BoxFit.cover,child: Text('Please Select A Project First'),): Scaffold(
+    return (widget.selectedProject ==null)?Column( // if web
+      children: [
+
+        Flexible(flex:1 ,child: FittedBox(fit: BoxFit.contain,child: Text('Please Select A Project First',style: TextStyle(fontSize: 48),))),
+        Flexible(flex: 3,
+          child: Container(width:MediaQuery.of(context).size.width,child:  Image.asset('images/init.jpg',height: 300,),
+            constraints: BoxConstraints(minHeight: 300,maxHeight: 350), // looks distorted, I just follow figma
+          ),
+        ),
+
+      ],
+    )
+
+        : Scaffold(
       appBar: (kIsWeb)?null:AppBar(
         title: (kIsWeb)?null: Text(widget.selectedProject!.projectName),
 
@@ -46,13 +59,10 @@ class _MyProjectViewState extends State<MyProjectView> {
 
 
                 Flexible( flex: 1,
-                  child: Container(child: Image.asset(widget.selectedProject!.imageLocation),
-                      constraints:  BoxConstraints(
-                    minHeight: 300,
-                      )
-
+                    child: Container(width:MediaQuery.of(context).size.width,height:300,child: FittedBox(fit: BoxFit.fill,child: Image.asset(widget.selectedProject!.imageLocation)),
+                    constraints: BoxConstraints(minHeight: 300), // looks distorted, I just follow figma
+                    ),
                   ),
-                ),
 
                 Expanded(
                   child: Padding(
