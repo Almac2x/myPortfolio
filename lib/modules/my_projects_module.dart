@@ -62,8 +62,8 @@ class _MyProjectsState extends State<MyProjects> {
                                 tileColor: Colors.black26,
                                 title: Text(myPortfolio.getProjects[index].projectName.toString()),
                                 subtitle: Text(myPortfolio.getProjects[index].projectSubHeader.toString()),
-                                leading: Image.asset(myPortfolio.getImageLocation),
-                               onLongPress:
+                                leading: CircleAvatar(backgroundImage: AssetImage(myPortfolio.getImageLocation)),
+                               onTap:
                                     (){
                                       (kIsWeb)?webFunction!(myPortfolio.getProjects[index]):
                                   (gotToSelectProjectM(myPortfolio.getProjects[index]));

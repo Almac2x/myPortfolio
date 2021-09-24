@@ -14,12 +14,10 @@ class MyPortfolio{
     String ValorantDescp = 'Valorant (stylized as VALORANT) is a free-to-play first-person hero shooter developed and published by Riot Games, for Microsoft Windows. First teased under the codename Project A in October 2019, the game began a closed beta period with limited access on April 7, 2020, followed by an official release on June 2, 2020. The development of the game started in 2014.';
    String ThisWarofMineDescp = 'This War of Mine is a survival-themed strategy game where the player controls a group of civilian survivors in a makeshift-damaged house in the besieged fictional city of Pogoren, Graznavia. The main goal of the game is to stay alive during the war with the tools and materials that the player can gather.';
 
-
     _projects = [
-      Project('CS:GO ','images/blando.jpg','CounterStrike : Global Offensive', CSGODescp),
-      Project('Valorant ','images/blando.jpg','Awful Game :)', ValorantDescp),
-      Project('This War of Mine ','images/blando.jpg','One of the best game I have played', ThisWarofMineDescp),
-
+      Project('CS:GO ','images/csgobackground.jpg','CounterStrike : Global Offensive', CSGODescp),
+      Project('Valorant ','images/valorantb.jpg','Awful Game :)', ValorantDescp),
+      Project('This War of Mine ','images/warB.jpg','One of the best game I have played', ThisWarofMineDescp),
     ];
 
   }

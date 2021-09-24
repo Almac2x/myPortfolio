@@ -27,7 +27,7 @@ class _MyProjectViewState extends State<MyProjectView> {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            padding: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 20),
+            padding: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 10),
 
             child: Column(mainAxisSize: MainAxisSize.max,
               //mainAxisAlignment: MainAxisAlignment.start,
@@ -45,14 +45,16 @@ class _MyProjectViewState extends State<MyProjectView> {
                 ),
 
 
-                Container(child: Image.asset(widget.selectedProject!.imageLocation),
-                    constraints:  BoxConstraints(
-                  minHeight: 300,
-                    )
+                Flexible( flex: 1,
+                  child: Container(child: Image.asset(widget.selectedProject!.imageLocation),
+                      constraints:  BoxConstraints(
+                    minHeight: 300,
+                      )
 
+                  ),
                 ),
 
-                Expanded( flex: 1,
+                Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: (kIsWeb)?20:10), // padding between image and the description
                     child: SingleChildScrollView(

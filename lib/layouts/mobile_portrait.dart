@@ -32,7 +32,7 @@ class _MobilePState extends State<MobileP> {
             border: Border.all(color: Colors.black),
 
         ),*/  //Just a border to look at my main contaier
-      margin: EdgeInsets.only(top: 20,left: 30, right: 30), // margins for container
+      margin: EdgeInsets.only(top: 20,left: 30, right: 30, bottom: 20), // margins for container
 
       child: Column(
         children: [
