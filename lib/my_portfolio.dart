@@ -4,6 +4,7 @@ class MyPortfolio{
   late String _lastName;
   late String _myPosition;
   late String _imageLocation = 'images/blando.jpg'; // temp static
+
   late List<Project> _projects; // list of Projects
 
   MyPortfolio( this._firstName,  this._lastName, this._myPosition){ // initializer here the projects
@@ -15,9 +16,9 @@ class MyPortfolio{
    String ThisWarofMineDescp = 'This War of Mine is a survival-themed strategy game where the player controls a group of civilian survivors in a makeshift-damaged house in the besieged fictional city of Pogoren, Graznavia. The main goal of the game is to stay alive during the war with the tools and materials that the player can gather.';
 
     _projects = [
-      Project('CS:GO ','images/csgobackground.jpg','CounterStrike : Global Offensive', CSGODescp),
-      Project('Valorant ','images/valorantb.jpg','Awful Game :)', ValorantDescp),
-      Project('This War of Mine ','images/warB.jpg','One of the best game I have played', ThisWarofMineDescp),
+      Project('CS:GO ','images/csgobackground.jpg','CounterStrike : Global Offensive', CSGODescp,'images/cslogo.png'),
+      Project('Valorant ','images/valorantb.jpg','Awful Game :)', ValorantDescp,'images/valoranticon.jpg'),
+      Project('This War of Mine ','images/warB.jpg','One of the best game I have played', ThisWarofMineDescp,'images/waricon.png'),
     ];
 
   }
@@ -28,13 +29,15 @@ class MyPortfolio{
   String get getFullName => '${this._firstName} ${this._lastName}';
   String get getMyPosition => this._myPosition;
   String get getImageLocation => this._imageLocation;
-  List<Project> get getProjects => this._projects;
 
+  List<Project> get getProjects => this._projects;
 }
 
 class Project{ //add projects class
 
   late String _projectName;
+  late String _iconLocation;
+  String get getIconLocation => this._iconLocation;
 
   String get projectName => _projectName;
 
@@ -43,7 +46,7 @@ class Project{ //add projects class
   late String _imageLocation;
   late String _projectDescription;
 
-  Project(this._projectName, this._imageLocation, this._projectSubHeader,this._projectDescription);
+  Project(this._projectName, this._imageLocation, this._projectSubHeader,this._projectDescription,this._iconLocation);
 
   String get imageLocation => _imageLocation;
 
